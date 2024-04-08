@@ -7,7 +7,7 @@ class CounterExp extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Counter Example"),
+        title: Text("Counter Exfample"),
         centerTitle: true,
       ),
       body: Center(
