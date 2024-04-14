@@ -5,6 +5,7 @@ import 'package:blockstatemanagment/view_model/bloc/counter_bloc/counter_bloc.da
 import 'package:blockstatemanagment/view_model/bloc/image_picker_bloc/image_picker_bloc.dart';
 import 'package:blockstatemanagment/view_model/bloc/slider_bloc/slider_bloc.dart';
 import 'package:blockstatemanagment/view_model/bloc/switch_bloc/switch_bloc.dart';
+import 'package:blockstatemanagment/view_model/bloc/to_do_bloc/to_do_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -23,7 +24,8 @@ class MyApp extends StatelessWidget {
         BlocProvider(create: (_) => CounterBloc(),),
         BlocProvider(create: (_) => SliderBloc()),
         BlocProvider(create: (_) => SwitchBloc()),
-        BlocProvider(create: (_) => ImagePickerBloc(ImagePickerUtils())),
+        BlocProvider(create: (_) => ImagePickerBloc(ImagePickerUtils()),),
+        BlocProvider(create: (_) => ToDoBloc())
       ],
       child: MaterialApp(
           title: 'Flutter Demo',
