@@ -34,17 +34,18 @@ class _FavouriteViewState extends State<FavouriteView> {
             BlocBuilder<FavouriteBloc, FavouriteState>(
               builder: (context, state) {
                 return Visibility(
-                  visible: state.tempFavouriteItemList.isNotEmpty ? true : false,
+                  visible:
+                      state.tempFavouriteItemList.isNotEmpty ? true : false,
                   child: IconButton(
                     onPressed: () {
-                    context.read<FavouriteBloc>().add(DeleteItem());
-                                },
-                                icon: Icon(Icons.delete),
-                                color: Colors.red,
-                              ),
+                      context.read<FavouriteBloc>().add(DeleteItem());
+                    },
+                    icon: Icon(Icons.delete),
+                    color: Colors.red,
+                  ),
                 );
-  },
-)
+              },
+            )
           ],
         ),
         body: Padding(
@@ -65,17 +66,33 @@ class _FavouriteViewState extends State<FavouriteView> {
                         return Card(
                           child: ListTile(
                             leading: Checkbox(
-                              value: state.tempFavouriteItemList.contains(state.favouriteItemList[index]) ? true : false,
+                              value: state.tempFavouriteItemList
+                                      .contains(state.favouriteItemList[index])
+                                  ? true
+                                  : false,
                               onChanged: (val) {
-                                final FavouriteItemsModel selectedItem = state.favouriteItemList[index];
-                                if(val!){
-                                  context.read<FavouriteBloc>().add(SelectedItem(item: selectedItem));
-                                }else{
-                                  context.read<FavouriteBloc>().add(UnSelectedItem(item: selectedItem));
+                                final FavouriteItemsModel selectedItem =
+                                    state.favouriteItemList[index];
+                                if (val!) {
+                                  context
+                                      .read<FavouriteBloc>()
+                                      .add(SelectedItem(item: selectedItem));
+                                } else {
+                                  context
+                                      .read<FavouriteBloc>()
+                                      .add(UnSelectedItem(item: selectedItem));
                                 }
                               },
                             ),
-                            title: Text(item.value),
+                            title: Text(
+                              item.value,
+                              style: TextStyle(
+                                decoration: state.tempFavouriteItemList
+                                    .contains(state.favouriteItemList[index]) ? TextDecoration.lineThrough : TextDecoration.none,
+                                color: state.tempFavouriteItemList
+                                    .contains(state.favouriteItemList[index]) ? Colors.red : Colors.white
+                              ),
+                            ),
                             trailing: IconButton(
                               onPressed: () {
                                 FavouriteItemsModel favouriteItemsModel =
