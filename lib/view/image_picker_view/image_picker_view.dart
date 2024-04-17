@@ -33,15 +33,30 @@ class ImagePickerView extends StatelessWidget {
           SizedBox(
             height: height * 0.03,
           ),
-          InkWell(
-            onTap: () {
-              context.read<ImagePickerBloc>().add(PickImageFromCamra());
-            },
-              child: Icon(
-            Icons.photo_camera_sharp,
-            size: 36,
-            color: Colors.black54,
-          ))
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              InkWell(
+                onTap: () {
+                  context.read<ImagePickerBloc>().add(PickImageFromCamra());
+                },
+                  child: Icon(
+                Icons.photo_camera_sharp,
+                size: 36,
+                color: Colors.black54,
+              )),
+              SizedBox(width: 10,),
+              InkWell(
+                onTap: () {
+                  context.read<ImagePickerBloc>().add(PickImageFromGallery());
+                },
+                  child: Icon(
+                Icons.image_rounded,
+                size: 36,
+                color: Colors.black54,
+              )),
+            ],
+          )
         ],
       ),
     );
