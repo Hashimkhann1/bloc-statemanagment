@@ -2,6 +2,7 @@ import 'package:blockstatemanagment/view/couteere_exp/couteere_exp.dart';
 import 'package:blockstatemanagment/view/exapmle_two/example_two.dart';
 import 'package:blockstatemanagment/view/favourite_view/favourite_view.dart';
 import 'package:blockstatemanagment/view/image_picker_view/image_picker_view.dart';
+import 'package:blockstatemanagment/view/posts_view/posts_view.dart';
 import 'package:blockstatemanagment/view/to_do_view/to_do_view.dart';
 import 'package:flutter/material.dart';
 
@@ -34,10 +35,16 @@ class AllExampleView extends StatelessWidget {
             ElevatedButton(onPressed: () {
               Navigator.push(context, MaterialPageRoute(builder: (context) => ToDoView()));
             }, child: Text("To Do",style: TextStyle(fontSize: 20),)),
+
             SizedBox(height: 10,),
             ElevatedButton(onPressed: () {
               Navigator.push(context, MaterialPageRoute(builder: (context) => FavouriteView()));
             }, child: Text("Favourite",style: TextStyle(fontSize: 20),)),
+
+            SizedBox(height: 10,),
+            ElevatedButton(onPressed: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context) => PostsView()));
+            }, child: Text("Posts",style: TextStyle(fontSize: 20),)),
           ],
         ),
       ),
