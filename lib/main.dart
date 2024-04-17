@@ -4,10 +4,12 @@ import 'package:blockstatemanagment/view/exapmle_two/example_two.dart';
 import 'package:blockstatemanagment/view_model/bloc/counter_bloc/counter_bloc.dart';
 import 'package:blockstatemanagment/view_model/bloc/favourite_bloc/favourite_bloc.dart';
 import 'package:blockstatemanagment/view_model/bloc/image_picker_bloc/image_picker_bloc.dart';
+import 'package:blockstatemanagment/view_model/bloc/post_bloc/post_bloc.dart';
 import 'package:blockstatemanagment/view_model/bloc/slider_bloc/slider_bloc.dart';
 import 'package:blockstatemanagment/view_model/bloc/switch_bloc/switch_bloc.dart';
 import 'package:blockstatemanagment/view_model/bloc/to_do_bloc/to_do_bloc.dart';
 import 'package:blockstatemanagment/view_model/create_fav_list/create_fav_list.dart';
+import 'package:blockstatemanagment/view_model/posts_view_model/posts_view_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -29,6 +31,7 @@ class MyApp extends StatelessWidget {
         BlocProvider(create: (_) => ImagePickerBloc(ImagePickerUtils()),),
         BlocProvider(create: (_) => ToDoBloc()),
         BlocProvider(create: (_) => FavouriteBloc(CreateFavList())),
+        BlocProvider(create: (_) => PostBloc(PostsViewModel())),
       ],
       child: MaterialApp(
           title: 'Flutter Demo',
